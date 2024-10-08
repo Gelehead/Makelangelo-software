@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language>
+<language>
+
+	<meta>
+		<name>English_DUP</name>
+		<authors>
+			<author>TEST_SET_DUP_KEY</author>
+		</authors>
+	</meta>
+
+	<string>
+		<key>BorderName</key>
+		<value>Outline paper</value>
+	</string>
+
+	<string>
+		<key>LissajousName</key>
+		<value>Lissajous</value>
+	</string>
+	<string>
+		<key>KEY_A</key>
+		<value>...</value>
+	</string>
+	<string>
+		<key>KEY_A</key>
+		<value>...</value>
+	</string>
+	<string>
+		<key></key>
+		<value>...</value>
+	</string>
+
+	<string>
+		<key>KEY_B</key>
+		<value>...</value>
+	</string>
+	<string>
+		<key>KEY_B</key>
+		<value>...</value>
+	</string>
+	<string>
+		<key>KEY_C_DOUBLED_VALUE</key>
+		<value>...</value>
+		<value>...</value>
+	</string>
+</language>

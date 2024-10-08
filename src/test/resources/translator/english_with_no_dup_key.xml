@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language>
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="language_no_dup_key.xsd" >
+	<meta>
+		<name>English_NO_DUP</name>
+		<authors>
+			<author>TEST_SET_NO_DUP_KEY</author>
+		</authors>
+	</meta>
+
+	<string>
+		<key>KEY_A</key>
+		<value>...</value>
+	</string>
+
+	<string>
+		<key>KEY_B</key>
+		<value>...</value>
+	</string>
+
+	<string>
+		<key>BorderName</key>
+		<value>Outline paper</value>
+	</string>
+
+	<string>
+		<key>LissajousName</key>
+		<value>Lissajous</value>
+	</string>
+</language>

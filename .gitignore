@@ -1,0 +1,68 @@
+# Start Makelangelo specific #
+*.class
+*.ngc
+**/log.html*
+**/log.txt*
+gcode/*
+*/temp.png
+java/Makelangelo.jar
+java/saved.png
+# End Makelangelo specific #
+
+src/main/art/
+
+# Start OS generated files #
+*/.DS_Store
+.DS_Store
+.DS_Store?
+Thumbs.db
+# End OS generated files #
+
+# Start Maven
+target/
+# End Maven
+
+# Start JetBrains IDEs: IntelliJ, modified from https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+*.iml
+## File-based project format:
+*.ipr
+*.iws
+.idea/
+# End JetBrains IDEs: IntelliJ, modified from https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+
+# Start Eclipse IDE
+classes/
+bin/
+.settings/
+**/.project
+**/.classpath
+# End Eclipse IDE
+
+## Auto generated diff files from SourceTree
+*.orig
+
+*.log
+java/.project
+## Auto Eclipse Checkstyle configuration
+.checkstyle
+.jar
+
+## Auto generated documentation
+latex/
+html/
+build/
+docs/
+
+## packaging
+packaging/*
+firmware.hex
+!src/main/package/firmware.hex
+avrdude.conf
+!src/main/package/avrdude.conf
+avrdude.exe
+!src/main/package/avrdude.exe
+*.dmg
+*.exe
+*.deb
+
+saved.png
