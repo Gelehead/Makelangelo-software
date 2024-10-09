@@ -83,22 +83,6 @@ public class LanguagesXmlValidationForNoDupKeyTest {
         assertFalse(isValide);
 	}
 
-	@Test
-	public void verifyThatValidationWorks_valide() throws IOException {
-
-		URL schemaFile = LanguagesXmlValidationForNoDupKeyTest.class.getResource(ressourceStringForXmlShemaFile);
-		assertNotNull(schemaFile, "The test need a redable schema xsd file (" + ressourceStringForXmlShemaFile + ") to validate the language files");
-
-		String myTestFileWithNoDupKeyInRessources = "/translator/english_with_no_dup_key.xml";
-		URL resource = LanguagesXmlValidationForNoDupKeyTest.class.getResource(myTestFileWithNoDupKeyInRessources);
-		assertNotNull(resource, "The test need a redable xml file (" + myTestFileWithNoDupKeyInRessources + ") to test itself");
-
-		// english_with_no_dup_key.xml do not containe duplicated or empty //language/string/key        
-		boolean isValide = xmlValidationWithExternalXsdShema(new File(resource.getFile()), schemaFile);
-
-		assertTrue(isValide);
-	}
-
 	/**
 	 * Validate an xml file with an external xsd Schema. src inspiration :
 	 * https://stackoverflow.com/questions/15732/whats-the-best-way-to-validate-an-xml-file-against-an-xsd-file

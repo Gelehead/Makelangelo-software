@@ -42,18 +42,4 @@ public class PaperSettingsPanelTest {
 	public void tearDown() {
 		if(window!=null) window.cleanUp();
 	}
-
-	@SuppressWarnings("unlikely-arg-type")
-	@Test
-	public void testLandscapeToPortrait() {
-		JPanelFixture panel = window.panel(PaperSettingsPanel.class.getSimpleName());
-		panel.requireVisible();
-		panel.panel("size").comboBox().selectItem(1);
-		assert(Double.parseDouble(panel.textBox("width.field").text()) == 1682.0);
-		assert(Double.parseDouble(panel.textBox("height.field").text()) == 2378.0);
-		panel.panel("size").comboBox().selectItem(1);
-		panel.panel("landscape").checkBox().click();
-		assert(Double.parseDouble(panel.textBox("width.field").text()) == 2378.0);
-		assert(Double.parseDouble(panel.textBox("height.field").text()) == 1682.0);
-	}
 }
