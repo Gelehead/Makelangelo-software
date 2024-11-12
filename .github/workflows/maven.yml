@@ -13,34 +13,6 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        jvm-flags:
-          # --------------------------------- ----------------------------------
-        # XWXWXWXWXWXWXWXW                                   WXWXWXWXWXWXWXWX
-        # WXWXWXWXWXWXWXWX                 A                 XWXWXWXWXWXWXWXW
-        # XWXWXWXWXWXWXWXW                AWA                WXWXWXWXWXWXWXWX
-        # WXWXWXWXWXWXWXWX           AA  AWXWA  AA           XWXWXWXWXWXWXWXW
-        # XWXWXWXWXWXWXWXW            VWXWXWXWXWV            WXWXWXWXWXWXWXWX
-        # WXWXWXWXWXWXWXWX        AA   VWXWXWXWV   AA        XWXWXWXWXWXWXWXW
-        # XWXWXWXWXWXWXWXW    VWXWXWXA  VWXWXWV  AXWXWXWV    WXWXWXWXWXWXWXWX
-        # WXWXWXWXWXWXWXWX     XWXWXWXWXWXWXWXWXWXWXWXWX     XWXWXWXWXWXWXWXW
-        # XWXWXWXWXWXWXWXW   AXWXWXWXWXWXWXWXWXWXWXWXWXWXA   WXWXWXWXWXWXWXWX
-        # WXWXWXWXWXWXWXWX      VXWXWXWXWXWXWXWXWXWXWXV      XWXWXWXWXWXWXWXW
-        # XWXWXWXWXWXWXWXW         VXWXWXWXWXWXWXWXV         WXWXWXWXWXWXWXWX
-        # WXWXWXWXWXWXWXWX           XWXWXWXWXWXWX           XWXWXWXWXWXWXWXW
-        # XWXWXWXWXWXWXWXW         AXWXWXWXWXWXWXWXA         WXWXWXWXWXWXWXWX
-        # WXWXWXWXWXWXWXWX                 I                 XWXWXWXWXWXWXWXW
-        # XWXWXWXWXWXWXWXW                 I                 WXWXWXWXWXWXWXWX
-        # WXWXWXWXWXWXWXWX                 I                 XWXWXWXWXWXWXWXW
-        # XWXWXWXWXWXWXWXW                                   WXWXWXWXWXWXWXWX
-        # -------------------------------------------------------------------
-          - "-Xmx1024m"
-          - "-XX:+UseNUMA"
-          - "-XX:+PrintCompilation"
-          - "-XX:+TieredCompilation"
-          - "-XX:+UseParallelGC"
-        
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
