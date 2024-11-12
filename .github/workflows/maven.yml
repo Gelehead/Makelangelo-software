@@ -35,11 +35,11 @@ jobs:
         # WXWXWXWXWXWXWXWX                 I                 XWXWXWXWXWXWXWXW
         # XWXWXWXWXWXWXWXW                                   WXWXWXWXWXWXWXWX
         # -------------------------------------------------------------------
-          - "-Xmx1024m"
+          - "-Xmx512m"
           - "-XX:+UseNUMA"
           - "-XX:+PrintCompilation"
           - "-XX:+TieredCompilation"
-          - "-XX:+UseParallelGC"
+          - "-XX:+PrintFlagsFinal"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -108,7 +108,7 @@ jobs:
     - name: Upload artifact for package
       uses: actions/upload-artifact@v4.3.3
       with:
-        name: jar
+        name: ${{ env.SANITIZED_JVM_FLAG }}
         retention-days: 1
         path: |
           src/main/package/jpackage*
