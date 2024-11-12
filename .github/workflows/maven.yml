@@ -108,7 +108,7 @@ jobs:
     - name: Upload artifact for package
       uses: actions/upload-artifact@v4.3.3
       with:
-        name: ${{ matrix.jvm-flags }}
+        name: $(echo "${{ matrix.jvm-flags }}" | sed 's/[^a-zA-Z0-9]/_/g')
         retention-days: 1
         path: |
           src/main/package/jpackage*
