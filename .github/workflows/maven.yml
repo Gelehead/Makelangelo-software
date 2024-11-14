@@ -42,9 +42,12 @@ jobs:
           - "-XX:+PrintFlagsFinal"
     runs-on: ubuntu-latest
     steps:
-    - name: Set Sanitized JVM Flag
+    #Le programme crée des fichier qui doivent avoir des noms différents, sans quoi la 
+    #GitHub action plante. Les noms ne peuvent pas contenir de charactères spéciaux,
+    #donc je les enlève avec un petit regex. 
+    - name: RemoveWeirdCharacters
       run: |
-        SANITIZED_JVM_FLAG=$(echo "${{ matrix.jvm-flags }}" | sed 's/[^a-zA-Z0-9]/_/g')
+        SANITIZED_JVM_FLAG=$(echo "${{ matrix.jvm-flags }}" | sed '[^a-zA-Z0-9]')
         echo "SANITIZED_JVM_FLAG=${SANITIZED_JVM_FLAG}" >> $GITHUB_ENV
     - uses: actions/checkout@v4
 
