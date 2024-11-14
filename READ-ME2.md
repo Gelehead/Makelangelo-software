@@ -6,6 +6,8 @@ Pour résoudre ce problème, nous avons ajouté un step qui permet de modifier l
 
 Ensuite, nous avons rencontré le problème que le nom des flags pouvait contenir des caractères illégaux. Donc nous avons du ajouter une commande qui retire ces caractères. Nous avons choisi la commande sed, car elle permet de simplement trouver et remplacer les caractère qui ne sont pas des lettres. Cela pourrait causer des problèmes si nous choisissions des flags qui n'ont comme différence de nom que des caractères qui ne sont pas des lettres, mais ce n'est pas le cas des flags que nous avons choisi.
 
+Les packages fail durant le build du projet, mais j'avoue que je ne crois pas pouvoir fixer ça.
+
 Flags et leurs justifications : 
 
 Xmx256m : Ce flag a été choisi, car il permet de savoir si le programme peut rouler sans problème, même si il n'a pas accès à beaucoup de mémoire. Cela est généralement important si on veut faire un programme qui va rouler sur des machines qui ne sont pas standardisées. Donc, 256m est une bonne quantité, car la vaste majorit des ordinateurs modernes sont capable d'octroyer sans problèmes 256m de mémoire.
