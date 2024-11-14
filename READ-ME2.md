@@ -17,3 +17,5 @@ XX:+UseFMA : Ce flag permet de faire des clauls avec des floating points de faç
 -XX:+PrintWarnings : Ce flag permet simplement de voir les problèmes potentiels avec le code et savoir si certaines des features ne sont plus à jour en imprimant les warnings de la JVM.
 
 -XX:+ReassociateInvariants : Ce flag permet d'optimiser les boucles en mettant les constantes à l'extérieur des dites boucles, donc si une boucle faisait toujours la même opération, ce flag permettrait que le programme ne fasse qu'une seule fois cette opération rendant le code plus rapide.
+
+Humour : Notre touche d'humour est qu'un de nos flag n'est pas comme les autres... C'est un drapeau du Canada!!!
