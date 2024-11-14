@@ -8,3 +8,12 @@ Ensuite, nous avons rencontré le problème que le nom des flags pouvait conteni
 
 Flags et leurs justifications : 
 
+Xmx256m : Ce flag a été choisi, car il permet de savoir si le programme peut rouler sans problème, même si il n'a pas accès à beaucoup de mémoire. Cela est généralement important si on veut faire un programme qui va rouler sur des machines qui ne sont pas standardisées. Donc, 256m est une bonne quantité, car la vaste majorit des ordinateurs modernes sont capable d'octroyer sans problèmes 256m de mémoire.
+
+XX:+UseG1GC : Ce flag a été choisi parce qu'il permet d'avoir des pause beaucoup plus régulières et beaucoup moins longues. Ça permet en effet de gérer le garbage collection de façon constante, permettant d'avoir beaucoup moins de latence si on veut utiliser cette application sur un serveur.
+
+XX:+UseFMA : Ce flag permet de faire des clauls avec des floating points de façon beaucoup plus précise, ce qui permet notamment d'éviter l'aliasage du à des objets étant trop proches. Ça pourrait être très pertinent si on voulait modifier l'application pour lui permettre d'être très précise dans ses dessins.
+
+-XX:+PrintWarnings : Ce flag permet simplement de voir les problèmes potentiels avec le code et savoir si certaines des features ne sont plus à jour en imprimant les warnings de la JVM.
+
+-XX:+ReassociateInvariants : Ce flag permet d'optimiser les boucles en mettant les constantes à l'extérieur des dites boucles, donc si une boucle faisait toujours la même opération, ce flag permettrait que le programme ne fasse qu'une seule fois cette opération rendant le code plus rapide.

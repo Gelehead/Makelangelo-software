@@ -36,10 +36,10 @@ jobs:
         # XWXWXWXWXWXWXWXW                                   WXWXWXWXWXWXWXWX
         # -------------------------------------------------------------------
           - "-Xmx256m"
-          - "-XX:+UseNUMA"
-          - "-XX:+PrintCompilation"
-          - "-XX:+TieredCompilation"
-          - "-XX:+PrintFlagsFinal"
+          - "-XX:+UseG1GC"
+          - "-XX:+UseFMA"
+          - "-XX:+PrintWarnings"
+          - "-XX:+ReassociateInvariants"
     runs-on: ubuntu-latest
     steps:
     #Le programme crée des fichier qui doivent avoir des noms différents, sans quoi la 
