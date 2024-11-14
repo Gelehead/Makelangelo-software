@@ -47,7 +47,7 @@ jobs:
     #donc je les enlève avec un petit regex. 
     - name: RemoveWeirdCharacters
       run: |
-        SANITIZED_JVM_FLAG=$(echo "${{ matrix.jvm-flags }}" | sed '[^a-zA-Z0-9]')
+        SANITIZED_JVM_FLAG=$(echo "${{ matrix.jvm-flags }}" | sed 's/[^a-zA-Z]//g')
         echo "SANITIZED_JVM_FLAG=${SANITIZED_JVM_FLAG}" >> $GITHUB_ENV
     - uses: actions/checkout@v4
 
