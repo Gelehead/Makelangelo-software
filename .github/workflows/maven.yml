@@ -35,7 +35,7 @@ jobs:
         # WXWXWXWXWXWXWXWX                 I                 XWXWXWXWXWXWXWXW
         # XWXWXWXWXWXWXWXW                                   WXWXWXWXWXWXWXWX
         # -------------------------------------------------------------------
-          - "-Xmx512m"
+          - "-Xmx256m"
           - "-XX:+UseNUMA"
           - "-XX:+PrintCompilation"
           - "-XX:+TieredCompilation"
@@ -47,8 +47,8 @@ jobs:
     #donc je les enlève avec un petit regex. 
     - name: RemoveWeirdCharacters
       run: |
-        SANITIZED_JVM_FLAG=$(echo "${{ matrix.jvm-flags }}" | sed 's/[^a-zA-Z]//g')
-        echo "SANITIZED_JVM_FLAG=${SANITIZED_JVM_FLAG}" >> $GITHUB_ENV
+        FLAGSANSCHARACTERESBIZZARES=$(echo "${{ matrix.jvm-flags }}" | sed 's/[^a-zA-Z]//g')
+        echo "FLAGSANSCHARACTERESBIZZARES=${FLAGSANSCHARACTERESBIZZARES}" >> $GITHUB_ENV
     - uses: actions/checkout@v4
 
     - uses: actions/setup-java@v4.2.1
@@ -115,7 +115,8 @@ jobs:
     - name: Upload artifact for package
       uses: actions/upload-artifact@v4.3.3
       with:
-        name: ${{ env.SANITIZED_JVM_FLAG }}
+        #Ici on fait un nom variable, sans-quoi la github action plante
+        name: ${{ env.FLAGSANSCHARACTERESBIZZARES }}
         retention-days: 1
         path: |
           src/main/package/jpackage*
